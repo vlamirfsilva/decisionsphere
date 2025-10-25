@@ -107,7 +107,7 @@
       }
 
       .hero-text p {
-        color: rgba(255, 255, 255, 0.9);
+        color: var(--text);
         margin-bottom: 2rem;
       }
 
@@ -280,8 +280,8 @@
         width: 60px;
         height: 60px;
         border-radius: 50%;
-        background: linear-gradient(135deg, #1e3d74, #0a1731);
-        color: #fff;
+        background: linear-gradient(135deg, #dfe5f5, #f8fafc);
+        color: var(--text);
         font-weight: 600;
         display: flex;
         align-items: center;
@@ -290,10 +290,11 @@
       }
 
       footer {
-        background: var(--navy-dark);
-        color: rgba(255, 255, 255, 0.7);
+        background: #fff;
+        color: var(--text);
         padding: 2rem 5vw;
         text-align: center;
+        border-top: 1px solid #e4e8f0;
       }
 
       @media (max-width: 768px) {

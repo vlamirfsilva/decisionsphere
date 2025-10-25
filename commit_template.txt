@@ -1,0 +1,6 @@
+# Standard Commit Message
+# git config --global commit.template /home/immortal/Codebase/commit_template.txt #Raspberry
+# git config --global commit_template /Users/i852423/GitHubMirror/Codebase/commit_template.txt #MacOs
+# git config --global commit.template "C:\Users\vlami\Documents\GitHubMirror\Codebase\commit_template.txt" #Win
+
+VS commit
