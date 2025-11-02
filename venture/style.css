@@ -1,0 +1,99 @@
+/* Decision Sphere — central style repository */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+img, svg { display: block; max-width: 100%; height: auto; }
+button, input { font: inherit; }
+
+:root{
+  --ds-surface: #ffffff;
+  --ds-elev: #eef2fb;
+  --ds-text: #1a253b;
+  --ds-muted: #5f6f92;
+  --ds-primary: #3a76f0;
+  --ds-primary-strong: #235de5;
+  --ds-highlight: #6fa7ff;
+  --ds-radius-lg: 20px;
+  --ds-shadow: 0 18px 36px rgba(44,73,128,0.14);
+  --ds-maxw: 1200px;
+  --ds-gutter: clamp(16px, 3vw, 32px);
+}
+html { color-scheme: light; }
+body{
+  background:
+    radial-gradient(1100px 720px at 18% -12%, rgba(95, 150, 255, 0.18), transparent 58%),
+    radial-gradient(900px 680px at 82% 0%, rgba(51, 192, 161, 0.14), transparent 60%),
+    linear-gradient(180deg, #f9fbff 0%, #eef3ff 100%);
+  color: var(--ds-text);
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.55;
+  letter-spacing: 0.01em;
+}
+.container{ width: min(100% - 2*var(--ds-gutter), var(--ds-maxw)); margin-inline: auto; }
+
+/* Header */
+.ds-header{ position: sticky; top: 0; z-index: 1000; backdrop-filter: saturate(140%) blur(10px); background: color-mix(in srgb, var(--ds-surface) 96%, transparent); border-bottom: 1px solid color-mix(in srgb, var(--ds-primary) 14%, transparent); box-shadow: 0 10px 24px rgba(40, 70, 125, 0.08); }
+.ds-header__inner{ display: flex; align-items: center; justify-content: space-between; gap: var(--ds-gutter); padding: 14px 0; }
+
+.ds-logo{ display: inline-flex; align-items: center; gap: .6rem; text-decoration: none; font-weight: 700; color: var(--ds-text); }
+.ds-logo__glyph{ inline-size: 40px; aspect-ratio: 1; border-radius: 999px; object-fit: contain; display: block; }
+.ds-logo__text{ font-size: clamp(1rem, 1.6vw, 1.125rem); white-space: nowrap; }
+
+.ds-topright{ display: flex; align-items: center; gap: 1rem; margin-left: auto; }
+
+/* Language selector */
+.ds-lang{ display: flex; flex-direction: row; align-items: center; gap: .5rem; margin-top: 0; }
+.ds-lang button{ background: transparent; border: none; cursor: pointer; padding: 0; line-height: 0; }
+.ds-lang img{ width: 24px; height: 24px; border-radius: 50%; object-fit: cover; filter: grayscale(50%) brightness(.97); transition: transform .15s ease, filter .15s ease, box-shadow .2s ease; }
+.ds-lang button[aria-pressed="true"] img{ filter: none; transform: scale(1.05); box-shadow: 0 0 0 4px rgba(58,118,240,0.18); }
+.ds-lang button:hover img{ filter: none; }
+
+/* Auth */
+.ds-auth{ display: grid; grid-template-columns: 1fr 1fr auto; gap: .5rem; width: 100%; }
+.ds-input{ background: var(--ds-elev); border: 1px solid color-mix(in srgb, var(--ds-primary) 18%, transparent); color: var(--ds-text); border-radius: 10px; }
+.ds-input::placeholder{ color: var(--ds-muted); }
+.ds-btn{ border: 0; border-radius: 12px; cursor: pointer; transition: all .2s ease; font-weight: 600; }
+.ds-btn--primary{ background: linear-gradient(135deg, var(--ds-primary-strong), var(--ds-highlight)); color: #fff; box-shadow: 0 12px 24px rgba(58,118,240,0.25); }
+.ds-btn--primary:hover{ transform: translateY(-1px) scale(1.02); box-shadow: 0 0 18px rgba(138,197,255,0.6); }
+
+/* Main/Hero */
+.ds-main{ padding-block: clamp(28px, 5.4vw, 64px); }
+.ds-hero{ display: grid; grid-template-columns: 1.2fr .8fr; gap: clamp(20px, 4vw, 48px); align-items: start; }
+.ds-hero__copy{ display: grid; gap: .85rem; }
+.ds-hero__title{ font-size: clamp(1.8rem, 3.8vw, 3rem); margin: 0; }
+.ds-hero__lead{ font-size: clamp(1rem, 1.3vw, 1.125rem); opacity: .92; text-align: justify; text-justify: inter-word; }
+.ds-hero__bullets{ display: grid; gap: .45rem; padding-left: 1.1rem; }
+.ds-cta{ --pad: .8rem; margin-top: .25rem; display: inline-flex; align-items: center; gap: .7rem; padding: var(--pad) calc(var(--pad) * 1.25); border-radius: 999px; text-decoration: none; color: var(--ds-text); background: linear-gradient(180deg, color-mix(in srgb, var(--ds-surface) 85%, transparent), var(--ds-elev)); border: 1px solid color-mix(in srgb, #ffffff 10%, transparent); box-shadow: var(--ds-shadow); }
+.ds-cta:hover{ border-color: color-mix(in srgb, var(--ds-primary) 50%, transparent); outline: 3px solid color-mix(in srgb, var(--ds-primary) 18%, transparent); }
+.ds-cta__chevron{ font-size: 1.25rem; line-height: 1; }
+
+/* Side panel */
+.ds-hero__panel{ min-width: 0; }
+.ds-card{ background: linear-gradient(180deg, var(--ds-surface), color-mix(in srgb, var(--ds-elev) 90%, var(--ds-surface) 10%)); border: 1px solid color-mix(in srgb, var(--ds-primary) 12%, transparent); border-radius: var(--ds-radius-lg); padding: clamp(16px, 3.2vw, 28px); box-shadow: var(--ds-shadow); }
+.ds-card__title{ margin: 0 0 .25rem 0; font-size: clamp(1.1rem, 2vw, 1.4rem); }
+.ds-card__text{ color: var(--ds-muted); margin: 0 0 .8rem 0; }
+.ds-metrics{ margin-top: .6rem; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .75rem; }
+.ds-metric{ background: var(--ds-elev); border: 1px solid color-mix(in srgb, var(--ds-primary) 10%, transparent); border-radius: 12px; padding: .7rem .8rem; text-align: center; }
+.ds-metric__value{ display: block; font-weight: 700; font-size: 1.1rem; }
+.ds-metric__label{ display: block; color: var(--ds-muted); font-size: .85rem; }
+
+/* Footer */
+.ds-footer{ border-top: 1px solid color-mix(in srgb, var(--ds-primary) 10%, transparent); margin-top: clamp(32px, 5vw, 72px); padding-block: 22px; background: color-mix(in srgb, var(--ds-surface) 95%, transparent); }
+.ds-footer__inner{ display: grid; gap: .6rem; }
+.ds-footer__nav{ display: flex; flex-wrap: wrap; gap: 1rem; }
+.ds-footer__nav a{ color: var(--ds-muted); text-decoration: none; }
+.ds-footer__nav a:hover{ color: var(--ds-text); }
+.ds-copy{ color: var(--ds-muted); margin: 0; font-size: .9rem; }
+
+/* Responsive */
+@media (max-width: 980px){
+  .ds-hero{ grid-template-columns: 1fr; }
+  .ds-hero__copy{ order: -1; }
+}
+@media (max-width: 900px){
+  .ds-header__inner{ flex-direction: column; align-items: flex-start; }
+  .ds-topright{ width: 100%; justify-content: space-between; align-items: flex-start; }
+  .ds-lang{ flex-direction: row; margin-top: .25rem; }
+}
+@media (max-width: 720px){
+  .ds-auth{ grid-template-columns: 1fr; }
+}
