@@ -1,531 +1,101 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<!doctype html>
+<html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Decision Sphere | Inteligência de Negócios</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Decision Sphere Venture — Landing</title>
+    <meta name="description" content="Decision Sphere Venture — applying Decision Sphere Core to venture building with structured data capture, enrichment, validations, and a real-time control tower." />
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      :root {
-        --navy: #0c1c3f;
-        --navy-dark: #050f24;
-        --gold: #f1c661;
-        --gray: #eef2f7;
-        --text: #1f1f1f;
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-
-      body {
-        margin: 0;
-        font-family: "Poppins", "Segoe UI", system-ui, -apple-system, sans-serif;
-        color: var(--text);
-        background: #fff;
-        line-height: 1.6;
-      }
-
-      a {
-        color: inherit;
-        text-decoration: none;
-      }
-
-      img {
-        max-width: 100%;
-        height: auto;
-      }
-
-      header.hero {
-        position: relative;
-        background: #fff;
-        color: var(--text);
-        padding: 2rem 5vw 5rem;
-        border-bottom: 1px solid #e4e8f0;
-      }
-
-      nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 1rem;
-        position: relative;
-        z-index: 1;
-      }
-
-      .logo {
-        display: flex;
-        align-items: center;
-        font-weight: 600;
-        letter-spacing: 0.5px;
-      }
-
-      .logo-image {
-        width: 46px;
-        height: 46px;
-        margin-right: 0.75rem;
-        object-fit: contain;
-      }
-
-      .nav-links {
-        display: flex;
-        gap: 1.5rem;
-        font-size: 0.95rem;
-      }
-
-      .nav-links a {
-        color: var(--navy);
-        border-bottom: 2px solid transparent;
-        padding-bottom: 0.25rem;
-        transition: border 0.2s ease, color 0.2s ease;
-      }
-
-      .nav-links a:hover {
-        color: var(--navy-dark);
-        border-color: var(--gold);
-      }
-
-      .hero-content {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 2.5rem;
-        margin-top: 2.5rem;
-        align-items: center;
-        position: relative;
-        z-index: 1;
-      }
-
-      .hero-text h1 {
-        font-size: clamp(2.2rem, 5vw, 3.5rem);
-        margin-bottom: 1rem;
-      }
-
-      .hero-text p {
-        color: var(--text);
-        margin-bottom: 2rem;
-      }
-
-      .cta-group {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
-      }
-
-      .btn {
-        padding: 0.9rem 1.8rem;
-        border-radius: 999px;
-        font-weight: 500;
-        border: 1px solid transparent;
-        transition: transform 0.2s ease, background 0.2s ease;
-      }
-
-      .btn-primary {
-        background: var(--gold);
-        color: #1a1200;
-      }
-
-      .btn-secondary {
-        border-color: rgba(12, 28, 63, 0.4);
-        color: var(--navy);
-      }
-
-      .btn:hover {
-        transform: translateY(-2px);
-      }
-
-      .hero-highlight {
-        background: #f7f9fe;
-        border-radius: 18px;
-        padding: 1.5rem;
-        backdrop-filter: blur(8px);
-        color: var(--text);
-      }
-
-      .hero-highlight h3 {
-        margin: 0 0 0.5rem;
-        font-size: 1.15rem;
-      }
-
-      .stats {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-        gap: 1rem;
-        margin-top: 1.5rem;
-      }
-
-      .stat-card {
-        background: #eef2fb;
-        border: 1px solid #dee4f3;
-        border-radius: 16px;
-        padding: 1rem;
-        text-align: center;
-      }
-
-      main {
-        position: relative;
-        z-index: 2;
-      }
-
-      .section {
-        padding: 5rem 5vw;
-        background: #fff;
-      }
-
-      .section:nth-of-type(even) {
-        background: #f7f9fc;
-      }
-
-      .section-heading {
-        max-width: 720px;
-        margin-bottom: 3rem;
-      }
-
-      .section-heading h2 {
-        margin: 0 0 0.75rem;
-        font-size: clamp(1.8rem, 4vw, 2.4rem);
-        color: var(--navy);
-      }
-
-      .flow {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 1.5rem;
-        align-items: center;
-      }
-
-      .flow-card {
-        background: #fff;
-        border-radius: 18px;
-        padding: 1.75rem;
-        box-shadow: 0 15px 40px rgba(12, 28, 63, 0.08);
-        border-top: 4px solid var(--gold);
-        min-height: 220px;
-      }
-
-      .flow-card h3 {
-        margin-top: 0;
-        color: var(--navy);
-      }
-
-      .flow-card ul {
-        padding-left: 1.25rem;
-        margin: 0;
-      }
-
-      .flow-arrow {
-        text-align: center;
-        font-size: 2rem;
-        color: var(--navy);
-      }
-
-      .tower {
-        margin: 3rem auto 0;
-        padding: 2rem;
-        border-radius: 22px;
-        background: linear-gradient(135deg, #fefefe, #e9eef7);
-        box-shadow: 0 20px 60px rgba(12, 28, 63, 0.08);
-      }
-
-      .tower h3 {
-        margin-top: 0;
-      }
-
-      .cards-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap: 1.5rem;
-      }
-
-      .experience-card {
-        border-radius: 18px;
-        padding: 2rem;
-        background: #fff;
-        box-shadow: 0 15px 30px rgba(15, 24, 44, 0.08);
-        border: 1px solid #edf0f5;
-      }
-
-      .experience-card h3 {
-        margin-top: 0;
-        color: var(--navy);
-      }
-
-      .experience-card ul {
-        margin: 1rem 0 0;
-        padding-left: 1.25rem;
-      }
-
-      .contacts {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 1.5rem;
-      }
-
-      .contact-card {
-        background: #fff;
-        border-radius: 18px;
-        padding: 1.5rem;
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        box-shadow: 0 8px 25px rgba(12, 28, 63, 0.08);
-      }
-
-      .avatar {
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        object-fit: cover;
-        display: block;
-      }
-
-      footer {
-        background: #fff;
-        color: var(--text);
-        padding: 2rem 5vw;
-        text-align: center;
-        border-top: 1px solid #e4e8f0;
-      }
-
-      @media (max-width: 768px) {
-        header.hero {
-          padding-bottom: 4rem;
-        }
-
-        nav {
-          flex-direction: column;
-          align-items: flex-start;
-        }
-
-        .nav-links {
-          flex-wrap: wrap;
-        }
-
-        .flow {
-          grid-template-columns: 1fr;
-        }
-
-        .flow-arrow {
-          display: none;
-        }
-      }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
-    <header class="hero" id="home">
-      <nav>
-        <div class="logo">
-          <img src="Logo.png" alt="Decision Sphere logo" class="logo-image" />
-          Decision Sphere
-        </div>
-        <div class="nav-links">
-          <a href="#sobre">Sobre</a>
-          <a href="#arquitetura">Arquitetura</a>
-          <a href="#experiencias">Experiências</a>
-          <a href="#contato">Contato</a>
-        </div>
-      </nav>
-      <div class="hero-content">
-        <div class="hero-text">
-          <h1>Inteligência de Negócios para decisões estratégicas</h1>
-          <p>
-            Decision Sphere Core acelera o seu negócio
-            transformando dados fragmentados em insights confiáveis
-            via IA generativa.
-          </p>
-          <div class="cta-group">
-            <a class="btn btn-secondary" href="#arquitetura"
-              >Explorar a solução</a
-            >
-          </div>
-        </div>
-        <div class="hero-highlight">
-          <h3>Decision Sphere Core Control Tower</h3>
-          <p>
-            Núcleo inteligente que consolida KPIs, alertas e recomendações em um
-            dashboard único, guiando a próxima ação crítica de cada processo.
-          </p>
-          <div class="stats">
-            <div class="stat-card">
-              <strong>+50</strong>
-              <p>Processos monitorados em tempo real</p>
-            </div>
-            <div class="stat-card">
-              <strong>IA</strong>
-              <p>Recomendações e validações contínuas</p>
-            </div>
-            <div class="stat-card">
-              <strong>360º</strong>
-              <p>Visão integrada das bases especializadas</p>
-            </div>
+    <!-- ===== HEADER ===== -->
+    <header class="ds-header">
+      <div class="ds-header__inner container">
+        <a class="ds-logo" href="#" aria-label="Decision Sphere home">
+          <img src="assets/Logo.png" alt="" class="ds-logo__glyph" />
+          <span class="ds-logo__text">Decision&nbsp;Sphere</span>
+        </a>
+
+        <div class="ds-topright">
+          <!-- Auth -->
+          <form class="ds-auth" action="#" method="post" novalidate>
+            <input class="ds-input" type="email" id="email" autocomplete="username" data-i18n-placeholder="auth.email" placeholder="Email" required />
+            <input class="ds-input" type="password" id="password" autocomplete="current-password" data-i18n-placeholder="auth.password" placeholder="Password" required />
+            <button class="ds-btn ds-btn--primary" type="submit" data-i18n="auth.signin">Sign in</button>
+          </form>
+
+          <!-- Language flags (horizontal stack) -->
+          <div class="ds-lang" role="group" aria-label="Language selector">
+            <button type="button" data-lang="pt-BR" aria-pressed="false" title="Português (Brasil)"><img src="assets/br.png" alt="PT-BR" /></button>
+            <button type="button" data-lang="en-US" aria-pressed="true" title="English (United States)"><img src="assets/us.png" alt="EN-US" /></button>
+            <button type="button" data-lang="es-419" aria-pressed="false" title="Español (Latinoamérica)"><img src="assets/es.png" alt="ES-419" /></button>
           </div>
         </div>
       </div>
     </header>
 
-    <main>
-      <section class="section" id="sobre">
-        <div class="section-heading">
-          <h2>Da fragmentação à clareza estratégica</h2>
-          <p>
-            Organizações lidam com decisões críticas apoiadas em dados incompletos
-            e processos desconectados. Decision Sphere e o produto
-            <strong>Decision Sphere Core</strong> modelam fluxos, enriquecem
-            informações com bases especializadas e entregam recomendações por IA,
-            elevando a qualidade das decisões em venture building, recrutamento,
-            consultoria e além.
-          </p>
+    <!-- ===== MAIN / HERO ===== -->
+    <main id="main" class="ds-main">
+      <section class="ds-hero container">
+        <div class="ds-hero__copy">
+          <h1 class="ds-hero__title" data-i18n="hero.title">Decision Sphere Venture</h1>
+          <p class="ds-hero__lead" data-i18n-html="hero.lead">Apply the <strong>Decision Sphere Core</strong> to venture building: model critical processes, enrich inputs with specialized data sources, and surface trustworthy recommendations—so selection, validation, and portfolio governance become faster, comparable, and evidence-based.</p>
+          <ul class="ds-hero__bullets">
+            <li data-i18n-html="hero.bullet1"><strong>Structured capture:</strong> intelligent questionnaires for standardized, comparable inputs.</li>
+            <li data-i18n-html="hero.bullet2"><strong>Data enrichment:</strong> integrations to validate and complement submissions in real time.</li>
+            <li data-i18n-html="hero.bullet3"><strong>Validations & insights:</strong> generative AI and analytics to flag risks and synthesize findings.</li>
+            <li data-i18n-html="hero.bullet4"><strong>Control tower:</strong> a live dashboard with KPIs, alerts, and portfolio follow-up.</li>
+          </ul>
+          <a href="#" class="ds-cta" aria-label="Decision Sphere">
+            <span class="ds-logo ds-logo--inline">
+              <img src="assets/Logo.png" alt="" class="ds-logo__glyph" />
+              <span class="ds-logo__text">Decision&nbsp;Sphere</span>
+            </span>
+            <span class="ds-cta__chevron">›</span>
+          </a>
+          <p class="ds-legal" data-i18n-html="hero.legal">By continuing you agree to our <a href="#">Terms</a> and <a href="#">Privacy Policy</a>.</p>
         </div>
-        <div class="cards-grid">
-          <article class="experience-card">
-            <h3>Modelagem de processos</h3>
-            <p>
-              Framework que orquestra etapas, responsáveis e indicadores, reduzindo
-              retrabalhos e trazendo previsibilidade.
-            </p>
-          </article>
-          <article class="experience-card">
-            <h3>Enriquecimento inteligente</h3>
-            <p>
-              Conecta bases especializadas para validar informações críticas,
-              eliminando lacunas e inconsistências antes de cada decisão.
-            </p>
-          </article>
-          <article class="experience-card">
-            <h3>Insights acionáveis</h3>
-            <p>
-              Algoritmos de IA generativa transformam dados validados em alertas,
-              hipóteses e recomendações claras para o time.
-            </p>
-          </article>
-        </div>
-      </section>
 
-      <section class="section" id="arquitetura">
-        <div class="section-heading">
-          <h2>Arquitetura da solução</h2>
-          <p>
-            Uma jornada contínua de dados confiáveis alimenta a torre de controle,
-            garantindo visibilidade ponta a ponta.
-          </p>
-        </div>
-        <div class="flow">
-          <article class="flow-card">
-            <h3>Entrada de dados</h3>
-            <ul>
-              <li>Formulários inteligentes capturam informações padronizadas.</li>
-              <li>Progresso visível aumenta a eficiência do preenchimento.</li>
-              <li>Base inicial pronta para o enriquecimento especializado.</li>
-            </ul>
-          </article>
-          <div class="flow-arrow">➜</div>
-          <article class="flow-card">
-            <h3>Enriquecimento</h3>
-            <ul>
-              <li>Integração com bases externas validadas.</li>
-              <li>Comparação automática reduz inconsistências.</li>
-              <li>Indicadores de status claros: validado, pendente ou alerta.</li>
-            </ul>
-          </article>
-          <div class="flow-arrow">➜</div>
-          <article class="flow-card">
-            <h3>Validações e insights</h3>
-            <ul>
-              <li>Geração de evidências e KPIs críticos.</li>
-              <li>Alertas proativos com recomendações por IA.</li>
-              <li>Histórico auditável para decisões estratégicas.</li>
-            </ul>
-          </article>
-        </div>
-        </section>
-        <BR></BR>
-        <div class="flow-card">
-          <h3>Torre de Controle</h3>
-          <p>
-            Painel central acompanha processos em análise, status de enriquecimento
-            e alertas pendentes. Gráficos de evolução e cards de KPI entregam visão
-            imediata, permitindo ação proativa baseada em evidências.
-          </p>
-        </div>
-      </section>
-
-      <section class="section" id="experiencias">
-        <div class="section-heading">
-          <h2>Experiências do usuário</h2>
-          <p>
-            Fluxos pensados para cada momento garantem navegação simples, transparente
-            e com indicadores visuais que guiam o próximo passo.
-          </p>
-        </div>
-        <div class="cards-grid">
-          <article class="experience-card">
-            <h3>Entrada guiada</h3>
-            <ul>
-              <li>Checklist intuitivo para pré-buildagem de startups.</li>
-              <li>Campos dinâmicos adaptados ao tipo de operação.</li>
-              <li>Salvar e retomar mantém o time em sincronia.</li>
-            </ul>
-          </article>
-          <article class="experience-card">
-            <h3>Controle em tempo real</h3>
-            <ul>
-              <li>KPIs destacados (startups avaliadas, dados validados, alertas).</li>
-              <li>Alertas categorizados por urgência para priorização instantânea.</li>
-              <li>Visão histórica mostra a evolução dos processos.</li>
-            </ul>
-          </article>
-          <article class="experience-card">
-            <h3>Enriquecimento confiável</h3>
-            <ul>
-              <li>Status claros: validado, alerta ou pendente.</li>
-              <li>Evidências externas comprovam cada informação crítica.</li>
-              <li>Redução de inconsistências e aumento da confiança da operação.</li>
-            </ul>
-          </article>
-        </div>
-      </section>
-
-      <section class="section" id="contato">
-        <div class="section-heading">
-          <h2>Time Decision Sphere</h2>
-          <p>
-            Estamos prontos para demonstrar o Decision Sphere Core e desenhar a
-            jornada ideal para sua organização.
-          </p>
-        </div>
-        <div class="contacts">
-          <div class="contact-card">
-            <img src="joao.jpeg" alt="João Luís Cavalcante" class="avatar" />
-            <div>
-              <strong>João Luís Cavalcante</strong>
-              <p>joaoluiz.carvalho@icloud.com</p>
+        <aside class="ds-hero__panel" aria-label="Venture Builder summary">
+          <div class="ds-card">
+            <h2 class="ds-card__title" data-i18n="panel.title">For Venture Builders</h2>
+            <p class="ds-card__text" data-i18n="panel.text">Scale startup creation with consistent triage, evidence-backed validation, and investor-day readiness. Track KPIs and alerts, prioritize theses, and govern the portfolio with a unified decision layer.</p>
+            <div class="ds-metrics">
+              <div class="ds-metric">
+                <span class="ds-metric__value" data-i18n="panel.m1.value">100+</span>
+                <span class="ds-metric__label" data-i18n="panel.m1.label">ideas/year triaged</span>
+              </div>
+              <div class="ds-metric">
+                <span class="ds-metric__value" data-i18n="panel.m2.value">4–6w</span>
+                <span class="ds-metric__label" data-i18n="panel.m2.label">manual cycle saved</span>
+              </div>
+              <div class="ds-metric">
+                <span class="ds-metric__value" data-i18n="panel.m3.value">↑</span>
+                <span class="ds-metric__label" data-i18n="panel.m3.label">approval quality</span>
+              </div>
             </div>
           </div>
-          <div class="contact-card">
-            <img src="carlos.jpeg" alt="Carlos Alberto" class="avatar" />
-            <div>
-              <strong>Carlos Alberto</strong>
-              <p>carlos.open4business@gmail.com</p>
-            </div>
-          </div>
-          <div class="contact-card">
-            <img src="vlamir.jpeg" alt="Vlamir Silva" class="avatar" />
-            <div>
-              <strong>Vlamir Silva</strong>
-              <p>vlamir@vlamir.com.br</p>
-            </div>
-          </div>
-        </div>
+        </aside>
       </section>
     </main>
 
-    <footer>
-      Decision Sphere &mdash; Inteligência de Negócios • 2025
+    <!-- ===== FOOTER ===== -->
+    <footer class="ds-footer">
+      <div class="container ds-footer__inner">
+        <nav class="ds-footer__nav" aria-label="Footer">
+          <a href="#" data-i18n="footer.about">About</a>
+          <a href="#" data-i18n="footer.product">Product</a>
+          <a href="#" data-i18n="footer.usecases">Use Cases</a>
+          <a href="#" data-i18n="footer.contact">Contact</a>
+        </nav>
+        <p class="ds-copy">© <span id="year"></span> <span>Decision Sphere.</span> <span data-i18n="footer.rights">All rights reserved.</span></p>
+      </div>
     </footer>
+
+    <script src="i18n.js"></script>
   </body>
 </html>
